@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+    <div class="racers_list">
+        <h1>Racers:</h1>
+            <ul>
+                {% for racer in racers %}
+                <li>
+                   <a href="{% url 'view_racer' racer.pk %}"><h4>{{racer.first_name}}</h4></a>
+                   <p>{{racer.team}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+    </div>
+    {%endblock%}
+</body>
+</html>
